@@ -224,10 +224,10 @@ int app_request(const su_context &ctx) {
         .fd = fd,
         .events = POLLIN
     };
-    if (xpoll(&pfd, 1, 70 * 1000) <= 0) {
-        close(fd);
-        fd = -1;
-    }
+    // if (xpoll(&pfd, 1, 70 * 1000) <= 0) {
+    //     close(fd);
+    //     fd = -1;
+    // }
 
     unlink(fifo);
     return fd;
